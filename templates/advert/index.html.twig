@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonces{% endblock %}
+
+{% block body %}
+<div style="margin: 3%;">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">City</th>
+      <th scope="col">Année</th>
+      <th scope="col">Kilomètres</th>
+      <th scope="col">Jours de location</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for advert in adverts %}
+    <tr>
+      <td>{{ advert.title }}</td>
+      <td>{{ advert.description }}</td>
+      <td>{{ advert.city }}</td>
+      <td>{{ advert.carYear }}</td>
+      <td>{{ advert.nbKm }}</td>
+      <td>{{ advert.nbDays }}</td>
+      <td>{{ advert.price }} €</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
